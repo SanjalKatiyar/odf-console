@@ -17,6 +17,12 @@ export const useURLPoll = <R>(
   const safeFetch = useSafeFetch();
   const tick = useCallback(() => {
     if (url) {
+      console.log('url');
+      console.log('url');
+      console.log(url);
+      console.log('url');
+      console.log('url');
+
       safeFetch({ url, cluster })
         .then((data) => {
           setResponse(data);

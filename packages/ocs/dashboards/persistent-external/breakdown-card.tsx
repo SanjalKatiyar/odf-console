@@ -31,6 +31,12 @@ export const BreakdownCard: React.FC = () => {
   const { queries, model, metric } = breakdownIndependentQueryMap[metricType];
   const queryKeys = Object.keys(queries);
 
+  console.log('usePrometheusBasePath');
+  console.log('usePrometheusBasePath');
+  console.log(usePrometheusBasePath());
+  console.log('usePrometheusBasePath');
+  console.log('usePrometheusBasePath');
+
   const [byUsed, byUsedError, byUsedLoading] = useCustomPrometheusPoll({
     endpoint: 'api/v1/query' as any,
     query: queries[queryKeys[0]],

@@ -227,13 +227,23 @@ export const detectManagedODF: FeatureDetector = async (
   try {
     const ns = await k8sGet({
       model: NamespaceModel,
-      ns: CEPH_STORAGE_NAMESPACE,
+      name: CEPH_STORAGE_NAMESPACE,
     });
     if (ns) {
       const isManagedCluster = ns?.metadata?.labels?.[ODF_MANAGED_LABEL];
+      console.log('@@@@@@@@@@@@@@');
+      console.log('@@@@@@@@@@@@@@');
+      console.log(ns);
+      console.log('@@@@@@@@@@@@@@');
+      console.log('@@@@@@@@@@@@@@');
       setFlag(ODF_MANAGED_FLAG, !!isManagedCluster);
     }
   } catch (error) {
+    console.log('##############');
+    console.log('##############');
+    console.log(error);
+    console.log('##############');
+    console.log('##############');
     setFlag(ODF_MANAGED_FLAG, false);
   }
 };
