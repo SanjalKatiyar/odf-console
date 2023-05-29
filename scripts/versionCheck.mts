@@ -29,9 +29,6 @@ const consolePlugin = JSON.parse(
   })
 );
 
-//@ts-ignore
-console.log(process.env);
-
 const version = process.env['PLUGIN_VERSION'] || defaultVer;
 const pluginFileName = `${pluginDir}/console-plugin.json`;
 consolePlugin.version = semver.valid(version) || defaultVer;
