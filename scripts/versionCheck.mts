@@ -30,12 +30,26 @@ const consolePlugin = JSON.parse(
 );
 
 //@ts-ignore
+console.log("process.env: ");
+//@ts-ignore
 console.log(process.env);
+//@ts-ignore
+console.log("process.ENV: ");
 //@ts-ignore
 console.log(process.ENV);
 
 const version = process.env['PLUGIN_VERSION'] || defaultVer;
 const pluginFileName = `${pluginDir}/console-plugin.json`;
 consolePlugin.version = semver.valid(version) || defaultVer;
+
+//@ts-ignore
+console.log("version: ");
+//@ts-ignore
+console.log(version);
+//@ts-ignore
+console.log("pluginFileName: ");
+//@ts-ignore
+console.log(pluginFileName);
+
 fs.writeFileSync(pluginFileName, JSON.stringify(consolePlugin, null, 2));
 fs.appendFileSync(pluginFileName, '\n');
