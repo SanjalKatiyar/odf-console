@@ -59,6 +59,26 @@ const CreateBackingStoreForm: React.FC<CreateBackingStoreFormProps> = (
     initialState
   );
 
+  React.useEffect(() => {
+    function testApi() {
+      fetch('/fusion/api/v1/backup-storage-locations')
+        .then((res) => {
+          //@ts-ignore
+          console.log('then block: ');
+          //@ts-ignore
+          console.log(res);
+        })
+        .catch((err) => {
+          //@ts-ignore
+          console.log('catch block: ');
+          //@ts-ignore
+          console.log(err);
+        });
+    }
+
+    testApi();
+  }, []);
+
   const [inProgress, setProgress] = React.useState(false);
   const [error, setError] = React.useState('');
   const [showSecret, setShowSecret] = React.useState(true);
