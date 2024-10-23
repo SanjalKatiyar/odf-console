@@ -48,7 +48,7 @@ export const NoobaaS3Provider: React.FC<NoobaaS3ProviderType> = ({
     if (!_.isEmpty(secretData) && !_.isEmpty(routeData)) {
       try {
         // ToDo: Remove this once ConsolePlugin proxy is configured
-        const endpoint = `http://${routeData.spec.host}`;
+        const endpoint = `https://${routeData.spec.host}`;
         const accessKeyId = atob(secretData.data?.[NOOBAA_ACCESS_KEY_ID]);
         const secretAccessKey = atob(
           secretData.data?.[NOOBAA_SECRET_ACCESS_KEY]
